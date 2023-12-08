@@ -10,10 +10,9 @@ async def services():
 
 
 @router.post("/crop_predictions")
-async def iot(data: CropData):
-    
-    print(data)
+async def ml():
+    pass
 
-    return "Success!"
+    
 
     
