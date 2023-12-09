@@ -19,7 +19,7 @@ dependencies:
     version: 0.5.3(ethers@5.7.2)
   '@pushprotocol/uiweb':
     specifier: ^1.1.22
-    version: 1.1.22(@pushprotocol/restapi@1.4.45)(@pushprotocol/socket@0.5.3)(@types/react@18.2.43)(axios@1.6.2)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.1)(tslib@2.6.2)
+    version: 1.1.22(@pushprotocol/restapi@1.4.45)(@pushprotocol/socket@0.5.3)(@types/react@18.2.43)(axios@0.27.2)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.1)(tslib@2.6.2)
   '@radix-ui/react-checkbox':
     specifier: ^1.0.4
     version: 1.0.4(@types/react@18.2.43)(react-dom@18.2.0)(react@18.2.0)
@@ -50,9 +50,6 @@ dependencies:
   anon-aadhaar-react:
     specifier: ^0.1.14
     version: 0.1.15(react@18.2.0)
-  axios:
-    specifier: ^1.6.2
-    version: 1.6.2
   cids:
     specifier: ^1.1.9
     version: 1.1.9
@@ -2317,7 +2314,7 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@pushprotocol/uiweb@1.1.22(@pushprotocol/restapi@1.4.45)(@pushprotocol/socket@0.5.3)(@types/react@18.2.43)(axios@1.6.2)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.1)(tslib@2.6.2):
+  /@pushprotocol/uiweb@1.1.22(@pushprotocol/restapi@1.4.45)(@pushprotocol/socket@0.5.3)(@types/react@18.2.43)(axios@0.27.2)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.1)(tslib@2.6.2):
     resolution: {integrity: sha512-BqGqWu0HIsNYohMqfcT4XODG/MCgRLMvkRspbrSPfgsn1wLX3WrBKafeNLoMnZZyzGrZI3sYpeiFRJtkUV0oDQ==}
     peerDependencies:
       '@pushprotocol/restapi': ^1.2.15
@@ -2338,7 +2335,7 @@ packages:
       '@web3-onboard/react': 2.8.13(react@18.2.0)
       '@web3-onboard/walletconnect': 2.5.1(@types/react@18.2.43)(react@18.2.0)
       '@web3-react/injected-connector': 6.0.7
-      axios: 1.6.2
+      axios: 0.27.2
       date-fns: 2.30.0
       emoji-picker-react: 4.5.16(react@18.2.0)
       ethers: 5.7.2

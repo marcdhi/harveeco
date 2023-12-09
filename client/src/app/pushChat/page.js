@@ -57,12 +57,10 @@ export default function PushChat() {
         }
     }, [wallets])
 
-    console.log(chats)
-
     return (
         <div className="flex gap-5 bg-black min-h-[calc(100vh-72px)]">
             <aside className="flex flex-col gap-4 px-3 static top-0">
-                <button className="bg-[#624a7d] text-white py-4 px-3 rounded-xl font-semibold w-full" onClick={CreateGroup}>make group</button>
+                <button className="bg-[#624a7d] text-white py-4 px-3 rounded-xl font-semibold w-full" onClick={() => CreateGroup}>make group</button>
                 <div>
                     {chats.length > 0
                         ? (chats.map((data, index) => {
