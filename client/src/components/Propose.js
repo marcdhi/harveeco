@@ -98,7 +98,7 @@ function Inputs() {
         // const abi = new Interface(daoDealClientABI);
         // console.log(await provider.getBalance("0x42c930a33280a7218bc924732d67dd84d6247af4"));
         console.log(daoDealClientABI);
-        const encodedFunctionCall = daoDealClientABI.interface.encodeFunctionData(
+        const encodedFunctionCall = daoDealClientABI.encodeFunctionData(
           "makeDealProposal",
           [DealRequestStruct]
         );
