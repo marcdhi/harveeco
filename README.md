@@ -14,7 +14,7 @@ Dead simple! A DAO for farmers.
 
 ## Project Idea
 
-To improve the lives of Indian farmers by leveraging blockchain technology and machine learning.
+To improve the lives of Indian farmers by leveraging `Blockchain Technology`, `Machine Learning` and `Internet of Things`.
 
 Indian farmers face numerous challenges, including:
 * Unpredictable crop yields: Farmers often lack access to accurate information about weather, market conditions, and optimal crops for their land. 
