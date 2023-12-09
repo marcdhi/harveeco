@@ -6,7 +6,7 @@ import requests
 
 import json
 
-from schema.farmer_data import FarmerGeoData
+from schema.farmer_data import FarmerGeoData, LightHouseData
 
 from logic.CropsFinal import infer
 
@@ -24,37 +24,37 @@ async def services():
 
 
 @router.post("/crop_predictions")
-async def ml(data: FarmerGeoData):
+async def ml(data: LightHouseData):
     service_dict = {}
 
-    with open("data/crop_data.json", "r") as f:
-        iot_dict = json.loads(f.read())
+    # with open("data/crop_data.json", "r") as f:
+    #     iot_dict = json.loads(f.read())
 
     for i in data.model_dump():
         service_dict[i] = data.model_dump()[i]
 
-    ml_dict = {
-        'farmer_data': service_dict,
-        'iot_data': iot_dict
-    }
+    # ml_dict = {
+    #     'farmer_data': service_dict,
+    #     'iot_data': iot_dict
+    # }
 
-    print(ml_dict)
+    # print(service_dict)
 
-    temperature = ml_dict['iot_data']["temperature"]
+    temperature = service_dict['data']["temperature"]
 
-    pressure = ml_dict['iot_data']["pressure"]
+    pressure = service_dict['data']["pressure"]
 
-    moisture = ml_dict['iot_data']["moisture"]
+    moisture = service_dict['data']["moisture"]
 
-    altitude = ml_dict['iot_data']["altitude"]
+    altitude = service_dict['data']["altitude"]
 
-    location = ml_dict['farmer_data']["state"]
+    location = service_dict['data']["state"]
 
-    crop_price = ml_dict['farmer_data']["crop_price"]
+    crop_price = service_dict['data']["crop_price"]
 
-    crop = ml_dict['farmer_data']["crop"]
+    crop = service_dict['data']["crop"]
 
-    month = ml_dict['farmer_data']["month"]
+    month = service_dict['data']["month"]
 
     humidity = (moisture * 0.02) / 100
 
@@ -78,7 +78,7 @@ async def ml(data: FarmerGeoData):
 
     rainfall_array = forecasted_rainfall(location, month)
 
-    rainfall = rainfall_array[month_vs_index[ml_dict['farmer_data']["month"]]]
+    rainfall = rainfall_array[month_vs_index[service_dict['data']["month"]]]
 
     N = value_n(location)
     P = value_p(location)
