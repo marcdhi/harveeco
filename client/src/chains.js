@@ -7,6 +7,7 @@ import { alchemyProvider } from "wagmi/providers/alchemy";
 // All of the chains configured below are supported by Tableland
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
+    chain.scrollSepolia,
     chain.filecoinCalibration,
     chain.mainnet,
     chain.goerli,
