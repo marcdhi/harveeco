@@ -7,6 +7,8 @@
 #include <ESP8266HTTPClient.h>
 #include <WiFiClient.h>
 
+#include <LiquidCrystal.h>
+
 MAX30105 oxySensor;
 Adafruit_BMP280 bmp;
 
@@ -22,9 +24,17 @@ float beatsPerMinute;
 int beatAvg;
 
 long globalLastUpdate = millis();
-int updateInterval = 5000;
+int updateInterval = 6000;  //5 mins
 
-int moisture = 250;
+float moisture = 250;
+
+float temperature;
+float pressure;
+float altitude;
+
+// Initialising the LCD object
+const int rs = D7, en = D6, d4 = D5, d5 = D4, d6 = D3, d7 = D0;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
 // Wifi Creds
 const char* ssid = "OnePlus Nord CE 3 Lite 5G";
@@ -36,6 +46,10 @@ const char* serverName = "http://192.168.158.28:8000/crop_iot";
 void setup() {
   // Initialize Serial Communication
   Serial.begin(9600);
+
+  lcd.begin(16, 2);
+  lcd.setCursor(0, 0);
+  lcd.clear();
 
   // Moisture Sensor
   pinMode(A0,INPUT);
@@ -65,18 +79,52 @@ void setup() {
   Serial.println("");
   Serial.print("Connected to WiFi network with IP Address: ");
   Serial.println(WiFi.localIP()); 
+  lcd.print("Connected");
+  lcd.setCursor(0, 1);
+  lcd.print(WiFi.localIP());
+  delay(5000);
+  lcd.clear();
+  lcd.setCursor(0, 0);
+}
+
+void displayUpdates(){
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Temp: ");
+  lcd.print(temperature);
+  lcd.setCursor(0,1);
+  lcd.print("P: ");
+  lcd.print(pressure);
+  delay(2000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("P: ");
+  lcd.print(pressure);
+  lcd.setCursor(0,1);
+  lcd.print("Moisture: ");
+  lcd.print(moisture);
+  delay(2000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Moisture: ");
+  lcd.print(moisture);
+  lcd.setCursor(0,1);
+  lcd.print("Alt: ");
+  lcd.print(altitude);
+  delay(2000);
+  lcd.setCursor(0,0);
 }
 
 void loop() {
   // Get Readings from Moisture Sensor 
   int raw_moisture = analogRead(A0);
-  moisture = map(raw_moisture,10,700,0,255);
+  moisture = map(raw_moisture,600,1024,0,255);
   if (moisture <= 0) moisture = 255;
-
+  moisture = 255-moisture;
   // Get readings from BMP280
-  float temperature = bmp.readTemperature();
-  float pressure = bmp.readPressure();
-  float altitude = bmp.readAltitude();
+  temperature = bmp.readTemperature();
+  pressure = bmp.readPressure();
+  altitude = bmp.readAltitude();
 
   // Get Heartrate data from MAX30100 
   long irValue = oxySensor.getIR();
@@ -131,6 +179,9 @@ void loop() {
     Serial.print("HTTP Response code: ");
     Serial.println(httpCode);
     
+    // display the updates on the LCD
+    displayUpdates();
+
     // Terminate http instance
     http.end();
   }

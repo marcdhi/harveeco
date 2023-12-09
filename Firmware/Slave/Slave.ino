@@ -34,26 +34,25 @@ void setup() {
 }
 
 void loop() {
-// Send Post Request at specified time intervals    
-  //Check WiFi connection status
-  // if(WiFi.status()== WL_CONNECTED){
-  //   WiFiClient client;
-  //   HTTPClient http;
-  //   // initiate http instance
-  //   http.begin(client, serverName);
-  //   http.addHeader("Content-Type", "application/json");
-  //   String json_data = String("{\"temperature\":\"") + 12.5 + String("\",\"pressure\":\"") + 94865.22 + String("\",\"moisture\":\"") + 200 + String("\"}");
-  //   int httpCode = http.POST(json_data);
-  //   // int httpCode = http.GET();
-  //   Serial.print("HTTP Response code: ");
-  //   Serial.println(httpCode);
+  // Check WiFi connection status
+  if(WiFi.status()== WL_CONNECTED){
+    WiFiClient client;
+    HTTPClient http;
+    // initiate http instance
+    http.begin(client, serverName);
+    http.addHeader("Content-Type", "application/json");
+    String json_data = String("{\"temperature\":\"") + 12.5 + String("\",\"pressure\":\"") + 94865.22 + String("\",\"moisture\":\"") + 200 + String("\"}");
+    int httpCode = http.POST(json_data);
+    // int httpCode = http.GET();
+    Serial.print("HTTP Response code: ");
+    Serial.println(httpCode);
     
-  //   // Terminate http instance
-  //   http.end();
-  // }
-  // else {
-  //   Serial.println("WiFi Disconnected");
-  // }
+    // Terminate http instance
+    http.end();
+  }
+  else {
+    Serial.println("WiFi Disconnected");
+  }
 }
 
 void requestHandler(){
