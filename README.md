@@ -45,6 +45,10 @@ Developing a project that comprises Blockchain, Machine Learning and the Interne
 * ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
 * ![ESP8266](https://img.shields.io/badge/-ESP8266-00979D?style=for-the-badge&logo=Arduino&logoColor=white)
 * ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+* ![Filecoin](https://img.shields.io/badge/Filecoin-%2300599C.svg?style=for-the-badge&logoColor=white)
+* ![Push Protocol](https://img.shields.io/badge/Push%20Protocol-%2300599C.svg?style=for-the-badge&logoColor=pink)
+* ![1Inch](https://img.shields.io/badge/1Inch-%2300599C.svg?style=for-the-badge&logoColor=white)
+  
 
 ## Network Diagram And Schematics
 - Network Diagram
