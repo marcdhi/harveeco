@@ -8,7 +8,7 @@ Dead simple! A DAO for farmers.
 2. [Our Approach](#our-approach)
 3. [Challenges We Faced](#challenges-we-faced)
 4. [Technologies We Used](#technologies-we-used)
-5. [Network Diagram](#network-diagram)
+5. [Network Diagram](#network-diagram-and-schematics)
 6. [Installation and Setup Guide](#installation-and-setup-guide)
 7. [Team Members](#team-members)
 
@@ -21,17 +21,17 @@ Indian farmers face numerous challenges, including:
 * Exploitative market practices: Middlemen and intermediaries often take a large share of farmers' profits, leaving them with insufficient income.
   
 ## Our Approach
-* **Gathering Data using NodeMCU:** With the present sensors the Tempreature, Pressure, Altitude and Moisture Data is gathered live. The data is processed to give produce caliberated readings.
+* **Gathering Data using NodeMCU:** With the present sensors the Temperature, Pressure, Altitude, and Moisture Data is gathered live. The data is processed to give produce calibrated readings.
 * **Data Storage on Lighthouse:**
 * **ML prediction**
 ## Challenges We Faced
-Developing a project that comprises of Blockchain, Masching Learning and Internet Of Things does pose a challenge when integrating all three. Following are the challenges we faced:
+Developing a project that comprises Blockchain, Machine Learning and the Internet Of Things does pose a challenge when integrating all three. Following are the challenges we faced:
 - Blockchain
     - a
 - Machine Learning
     - b
 - IOT
-    - Calibrating the sensors to get a resonably accurate value.
+    - Calibrating the sensors to get a reasonably accurate value.
     - Establishing wireless communication and sending data to the backend server. Also not exposing the backend IP properly on the local network resulted in further complications.
 
 ## Technologies We Used
@@ -53,7 +53,9 @@ Developing a project that comprises of Blockchain, Masching Learning and Interne
 
 - IOT Schematic
 
-## Installation and Setup
+![NodeMCU drawio](https://github.com/marcdhi/harveeco/assets/95867745/44cc038d-3acc-4481-a282-96d610caaa6e)
+
+## Installation and Setup Guide
 - Server
 - Client
 - IOT
