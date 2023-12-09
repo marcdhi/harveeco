@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { PrivyProvider } from '@privy-io/react-auth';
 import { base, baseGoerli, scrollSepolia, scrollTestnet, mainnet, goerli, polygon, polygonMumbai, filecoinCalibration } from '@wagmi/core/chains'
-import Navbar from '@/components/navbar';
+import Navbar from '../components/navbar';
 
 const inter = Inter({ subsets: ['latin'] })
 
