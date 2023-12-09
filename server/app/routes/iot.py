@@ -1,5 +1,7 @@
 import os
 
+import json
+
 import joblib
 
 from fastapi import APIRouter, HTTPException, Depends, status
@@ -34,6 +36,23 @@ async def iot():
 @router.post("/crop_iot")
 async def iot(data: CropData):
 
+    month = datetime.datetime.now().month
+
+    month_to_index = {
+        1: "Jan",
+        2: "Feb",
+        3: "Mar",
+        4: "Apr",
+        5: "May",
+        6: "Jun",
+        7: "Jul",
+        8: "Aug",
+        9: "Sept",
+        10: "Oct",
+        11: "Nov",
+        12: "Dec"
+    }
+
     crop_data_folder = "data"
 
     model_file_path = os.path.join(os.getcwd(), "ml_models", "crop_model_final.sav")
@@ -42,19 +61,26 @@ async def iot(data: CropData):
 
     print(data)
 
-    json_data = data.model_dump()
+    new_data = {
+        "temperature": data.temperature,
+        "pressure": data.pressure,
+        "moisture": data.moisture,
+        "altitude": data.altitude,
+        "name": data.name,
+        "area": data.area,
+        "state": data.state,
+        "aadhar": data.aadhar,
+        "crop_price": data.crop_price,
+        "month": month_to_index[month]
+    }
 
-    json_to_file(json_data, "data/crop_data.json")
+    dict_to_json = json.dumps(new_data)
+
+    json_to_file(dict_to_json, "data/crop_data.json")
 
     initialize_lighthouse("data/crop_data.json", "upload")
 
-    return "Lesss gooo"
-
-    # list, x = infer()
-
-    # allocate_optimal_land()
-
-    # print(list)
+    
 
 
 

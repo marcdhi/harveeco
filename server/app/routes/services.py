@@ -25,36 +25,26 @@ async def services():
 
 @router.post("/crop_predictions")
 async def ml(data: LightHouseData):
-    service_dict = {}
 
-    # with open("data/crop_data.json", "r") as f:
-    #     iot_dict = json.loads(f.read())
+    service_dict = {}
 
     for i in data.model_dump():
         service_dict[i] = data.model_dump()[i]
 
-    # ml_dict = {
-    #     'farmer_data': service_dict,
-    #     'iot_data': iot_dict
-    # }
 
-    # print(service_dict)
+    temperature = service_dict["temperature"]
 
-    temperature = service_dict['data']["temperature"]
+    pressure = service_dict["pressure"]
 
-    pressure = service_dict['data']["pressure"]
+    moisture = service_dict["moisture"]
 
-    moisture = service_dict['data']["moisture"]
+    altitude = service_dict["altitude"]
 
-    altitude = service_dict['data']["altitude"]
+    location = service_dict["state"]
 
-    location = service_dict['data']["state"]
+    crop_price = service_dict["crop_price"]
 
-    crop_price = service_dict['data']["crop_price"]
-
-    crop = service_dict['data']["crop"]
-
-    month = service_dict['data']["month"]
+    month = service_dict["month"]
 
     humidity = (moisture * 0.02) / 100
 
@@ -78,7 +68,7 @@ async def ml(data: LightHouseData):
 
     rainfall_array = forecasted_rainfall(location, month)
 
-    rainfall = rainfall_array[month_vs_index[service_dict['data']["month"]]]
+    rainfall = rainfall_array[month_vs_index[service_dict["month"]]]
 
     N = value_n(location)
     P = value_p(location)
@@ -92,7 +82,12 @@ async def ml(data: LightHouseData):
 
     print(list)
 
-    # allocate_optimal_land()
+    convert_list_to_json = json.dumps(list)
+
+    # allocate_optimal_land(crop_price)
+
+    return {"data": convert_list_to_json}
+
 
     
 

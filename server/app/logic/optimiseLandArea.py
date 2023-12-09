@@ -31,7 +31,7 @@ selling_price_list = []
 Top crops will be a list where each item of this list will be a key to the dictionary we will make
 """
 
-def allocate_optimal_land(current_money = 100,buying_price1 = buying_price_list, price_per_kg1= selling_price_list):
+def allocate_optimal_land(current_money ,buying_price1 = buying_price_list, price_per_kg1= selling_price_list):
     """
     
     Arguments : top_crops, current_money, buying_price, selling_price, output_per_area, time_to_grow
