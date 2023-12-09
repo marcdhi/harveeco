@@ -19,6 +19,7 @@ import {
 import { columns } from "./components/columns";
 import { DataTable } from "./components/data-table";
 import { UserNav } from "./components/user-nav";
+import Analysis from "../../components/map/map"
 
 export default function BuyData() {
 
@@ -82,6 +83,7 @@ export default function BuyData() {
             <div className="w-full">
                 <DataTable data={jobData} columns={columns} />
             </div>
+            <Analysis data={jobData} />
         </main >
     )
 }
