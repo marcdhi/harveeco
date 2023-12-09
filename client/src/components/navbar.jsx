@@ -77,8 +77,8 @@ export default function Navbar() {
                             <span className="flex items-center md:px-4 transition hover:text-primary">
                                 {ready
                                     ? (authenticated
-                                        ? <button className=" bg-[#604085] text-white p-2 px-3 rounded-xl font-semibold" onClick={() => handleLogout()}>{loggingOut ? "logging out..." : "Logout Privy"}</button>
-                                        : <button className=" bg-[#604085] text-white p-2 px-3 rounded-xl font-semibold" onClick={login}>Login Privy</button>
+                                        ? <button className=" bg-[#604085] text-white p-2 px-3 rounded-xl font-normal" onClick={() => handleLogout()}>{loggingOut ? "logging out..." : "Logout Privy"}</button>
+                                        : <button className=" bg-[#604085] text-white p-2 px-3 rounded-xl font-normal" onClick={login}>Login Privy</button>
                                     )
                                     : <button className=" bg-[#624a7d] text-white p-2 px-3 rounded-xl font-semibold" onClick={login} disabled>Login Privy</button>
                                 }

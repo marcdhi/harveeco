@@ -2,7 +2,7 @@ import { z } from "zod"
 
 // We're keeping a simple non-relational schema here.
 // IRL, you will have a schema for your data models.
-export const dataSchema = z.object({
+export const taskSchema = z.object({
   temperature: z.number(),
   pressure: z.number(),
   mositure: z.number(),
@@ -13,4 +13,4 @@ export const dataSchema = z.object({
   state: z.string(),
 })
 
-export type Task = z.infer<typeof dataSchema>
+export type Task = z.infer<typeof taskSchema>

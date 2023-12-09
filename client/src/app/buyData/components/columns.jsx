@@ -34,60 +34,54 @@ export const columns = [
     enableHiding: false,
   },
   {
-    accessorKey: "bounty",
+    accessorKey: "name",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Bounty" />
+      <DataTableColumnHeader column={column} title="Name" />
     ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("bounty")}</div>,
+    cell: ({ row }) => <div className="w-[80px]">{row.getValue("name")}</div>,
     enableSorting: true,
     enableHiding: false,
   },
   {
-    accessorKey: "name",
+    accessorKey: "state",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Title" />
+      <DataTableColumnHeader column={column} title="State" />
     ),
     cell: ({ row }) => {
       // const label = labels.find((label) => label.value === row.original.label)
 
       return (
         <div className="flex space-x-2">
-          <Badge className="badge" variant="outline">{row.original.job_id}</Badge>
+          <Badge className="badge text-white" variant="outline">{row.original.area}</Badge>
           <span className="max-w-[500px] truncate font-medium hover:underline">
-            {row.original.status === "active"
-              ? <Link href={`/annotate/${row.original.job_id}`}>
-                {row.getValue("name")}
-              </Link>
-              : <Link href="">
-                {row.getValue("name")}
-              </Link>
-            }
-
+            <Link href="">
+              {row.getValue("state")}
+            </Link>
           </span>
         </div>
       )
     },
   },
   {
-    accessorKey: "status",
+    accessorKey: "crop_price",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Status" />
+      <DataTableColumnHeader column={column} title="Crop Price" />
     ),
     cell: ({ row }) => {
-      const status = statuses.find(
-        (status) => status.value === row.getValue("status")
-      )
+      // const status = statuses.find(
+      //   (status) => status.value === row.getValue("crop_price")
+      // )
 
-      if (!status) {
-        return null
-      }
+      // if (!status) {
+      //   return null
+      // }
 
       return (
         <div className="flex w-[100px] items-center">
-          {status.icon && (
+          {/* {status.icon && (
             <status.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-          )}
-          <span>{status.label}</span>
+          )} */}
+          <span>{row.getValue("crop_price")}</span>
         </div>
       )
     },
@@ -96,9 +90,9 @@ export const columns = [
     },
   },
   {
-    accessorKey: "vendor_address", //change to vendor_address later
+    accessorKey: "temperature", //change to vendor_address later
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Vendor Address" />
+      <DataTableColumnHeader column={column} title="Temperature" />
     ),
     cell: ({ row }) => {
       // const priority = priorities.find(
@@ -114,7 +108,88 @@ export const columns = [
           {/* {priority.icon && (
             <priority.icon className="mr-2 h-4 w-4 text-muted-foreground" />
           )} */}
-          <span>{row.getValue("vendor_address")}</span>
+          <span>{row.getValue("temperature")}</span>
+        </div>
+      )
+    },
+    filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id))
+    },
+  },
+  {
+    accessorKey: "pressure", //change to vendor_address later
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Pressure" />
+    ),
+    cell: ({ row }) => {
+      // const priority = priorities.find(
+      //   (priority) => priority.value === row.getValue("priority")
+      // )
+
+      // if (!priority) {
+      //   return null
+      // }
+
+      return (
+        <div className="flex items-center">
+          {/* {priority.icon && (
+            <priority.icon className="mr-2 h-4 w-4 text-muted-foreground" />
+          )} */}
+          <span>{row.getValue("pressure")}</span>
+        </div>
+      )
+    },
+    filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id))
+    },
+  },
+  {
+    accessorKey: "altitude", //change to vendor_address later
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Altitude" />
+    ),
+    cell: ({ row }) => {
+      // const priority = priorities.find(
+      //   (priority) => priority.value === row.getValue("priority")
+      // )
+
+      // if (!priority) {
+      //   return null
+      // }
+
+      return (
+        <div className="flex items-center">
+          {/* {priority.icon && (
+            <priority.icon className="mr-2 h-4 w-4 text-muted-foreground" />
+          )} */}
+          <span>{row.getValue("altitude")}</span>
+        </div>
+      )
+    },
+    filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id))
+    },
+  },
+  {
+    accessorKey: "moisture", //change to vendor_address later
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Moisture" />
+    ),
+    cell: ({ row }) => {
+      // const priority = priorities.find(
+      //   (priority) => priority.value === row.getValue("priority")
+      // )
+
+      // if (!priority) {
+      //   return null
+      // }
+
+      return (
+        <div className="flex items-center">
+          {/* {priority.icon && (
+            <priority.icon className="mr-2 h-4 w-4 text-muted-foreground" />
+          )} */}
+          <span>{row.getValue("moisture")}</span>
         </div>
       )
     },

@@ -70,16 +70,16 @@ export function DataTable({
   })
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 text-white w-full z-40 relative">
       <DataTableToolbar table={table} />
       <div className="rounded-md border">
         <Table>
-          <TableHeader>
+          <TableHeader >
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead key={header.id} className="text-white">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
