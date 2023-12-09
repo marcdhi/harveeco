@@ -1,7 +1,7 @@
 "use client";
 import { usePrepareContractWrite } from "wagmi";
 import { useWallets } from "@privy-io/react-auth";
-import abi from "../contractABIs/harveecoToken.json";
+import abi from "../contractABIs/harveecoDao.json";
 import { Button } from "./ui/button";
 import { useContractWrite } from "wagmi";
 
