@@ -6,7 +6,8 @@ import { PrivyProvider } from '@privy-io/react-auth';
 import { base, baseGoerli, scrollSepolia, scrollTestnet, mainnet, goerli, polygon, polygonMumbai, filecoinCalibration } from '@wagmi/core/chains'
 import Navbar from '../components/navbar';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
+
 
 // export const metadata = {
 //   title: 'Harveeco',
@@ -33,5 +34,5 @@ export default function RootLayout({ children }) {
         </PrivyProvider>
       </body>
     </html>
-  )
+  );
 }
