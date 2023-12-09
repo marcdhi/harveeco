@@ -103,7 +103,7 @@ const Feature = () => {
                       </svg>
                       <p className="text-sm text-slate-400 leading-6 ml-2">
                         <strong className="font-semibold text-slate-100">
-                          Verifiability with zkML{" "}
+                          Correctness & Validness with zkML{" "}
                         </strong>
                         — Harveeco makes sure that the predictions are not manipulated by any third party.
                       </p>
@@ -127,22 +127,24 @@ const Feature = () => {
                       </svg>
                       <p className="text-sm text-slate-400 leading-6 ml-2">
                         <strong className="font-semibold text-slate-100">
-                          Consistency
+                        Optimized Resource Management
                         </strong>{" "}
-                        — Consistent code documentation
+                        — Harveeco can predict future area needs based on historical data and current market conditions.
                       </p>
                     </div>
                   </li>
                 </ul>
               </div>
-              <Link
+
+              {/* <Link
                 href="/docGen"
                 className="items-center relative text-sm bg-gradient-to-br dark:focus:ring-lime-800 dark:hover:text-gray-900 dark:text-white focus:outline-none focus:ring-4 focus:ring-lime-200 font-medium from-[#6112b5] group group-hover:from-[#6112b5] group-hover:to-[#6112b5] inline-flex justify-center overflow-hidden p-0.5 rounded-lg text-gray-900 to-[#6112b5] mb-2 mr-2 w-fit mt-6"
               >
                 <span className="flex items-center text-white hover:bg-purple-700 duration-75 ease-in relative rounded-md transition-all py-2.5 px-8">
                   Get started ✨
                 </span>
-              </Link>
+              </Link> */}
+              
             </div>
             <div className="h-full lg:mt-0 lg:order-none mt-12 order-1">
               <div
@@ -157,18 +159,18 @@ const Feature = () => {
           <div className="list-none gap-4 grid grid-cols-1 lg:gap-24 lg:grid-cols-2 mt-6">
             <div className="h-full lg:mt-0 lg:order-none mt-12 order-1">
               <div className="w-full border-white/10 lg:border lg:p-10 lg:rounded-3xl">
-                <img src="/testgen.png" />
+                <img src="/2.jpg" />
               </div>
             </div>
             <div>
-              <span className="text-xs bg-clip-text bg-gradient-to-r font-medium from-[#b278ef] text-transparent to-green-500 tracking-widest uppercase via-esmerald-600">
-                TESTS GENERATION
+              <span className="text-xs bg-clip-text bg-gradient-to-r font-medium from-[#b278ef] text-transparent to-green-500 tracking-widest uppercase via-emerald-600">
+                Onboard in seconds
               </span>
               <h2 className="font-normal text-white mt-8 text-3xl">
-                AI-Powered Code Tests Generation
+                Smart Onboardings using Web3 Auth
               </h2>
               <p className="max-w-2xl mt-4 text-slate-400 text-lg">
-                Our AI-driven test generation tool automates the test-writing process, saving you time and resources while ensuring comprehensive test coverage for your codebase.
+              Harveeco streamlines the onboarding process for farmers, ensuring a smooth and hassle-free experience.
               </p>
               <div className="mt-12 gap-3">
                 <ul className="list-none" role="list">
@@ -190,9 +192,9 @@ const Feature = () => {
                       </svg>
                       <p className="text-sm text-slate-400 leading-6 ml-2">
                         <strong className="font-semibold text-slate-100">
-                          Time Saver
+                        Farmers
                         </strong>{" "}
-                        — Rapid test suite generation
+                        — Join Harveeco seamlessly with Aadhar Anon SDK for secure, privacy-preserving identity verification
                       </p>
                     </div>
                   </li>
@@ -214,58 +216,37 @@ const Feature = () => {
                       </svg>
                       <p className="text-sm text-slate-400 leading-6 ml-2">
                         <strong className="font-semibold text-slate-100">
-                          Quality Assurance{" "}
+                        Web3 Users
                         </strong>
-                        — Ensure code reliability
+                        — Connect instantly using your existing digital wallet via Privy.
                       </p>
                     </div>
                   </li>
-                  <li>
-                    <div className="flex relative items-start py-2">
-                      <svg
-                        className="h-5 text-[#3fff3c] w-5"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                      >
-                        <path
-                          d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></path>
-                      </svg>
-                      <p className="text-sm text-slate-400 leading-6 ml-2">
-                        <strong className="font-semibold text-slate-100">
-                          Catch Bugs
-                        </strong>{" "}
-                        — Identify issues faster
-                      </p>
-                    </div>
-                  </li>
+                  
                 </ul>
               </div>
-              <Link
+
+              {/* <Link
                 href="/testGen"
                 className="items-center relative text-sm bg-gradient-to-br dark:focus:ring-lime-800 dark:hover:text-gray-900 dark:text-white focus:outline-none focus:ring-4 focus:ring-lime-200 font-medium from-[#6112b5] group group-hover:from-[#6112b5] group-hover:to-[#6112b5] inline-flex justify-center overflow-hidden p-0.5 rounded-lg text-gray-900 to-[#6112b5] mb-2 mr-2 w-fit mt-6"
               >
                 <span className="flex items-center text-white hover:bg-purple-700 duration-75 ease-in relative rounded-md transition-all py-2.5 px-8">
                   Get started ✨
                 </span>
-              </Link>
+              </Link> */}
+
             </div>
           </div>
           <div className="list-none gap-4 grid grid-cols-1 lg:gap-24 lg:grid-cols-2 mt-6">
             <div>
               <span className="text-xs bg-clip-text bg-gradient-to-r font-medium from-[#b278ef] text-transparent to-green-500 tracking-widest uppercase via-emerald-600">
-                Code Refactoring / Optimization
+                Farmers Rewarded, Companies Empowered
               </span>
               <h2 className="font-normal text-white mt-8 text-3xl">
-                ⚙️ Intelligent Code Refactoring
+              A Symbiotic Relationship in Agriculture
               </h2>
               <p className="max-w-2xl mt-4 text-slate-400 text-lg">
-                reDocs.ai's Code Refactoring tool leverages artificial intelligence to enhance and streamline your code. It works to clean up and optimize your codebase, resulting in improved readability, understanding, and maintainability.
+              A symbiotic relationship between farmers and companies, fostered by Harveeco's innovative platform
               </p>
               <div className="mt-12 gap-3">
                 <ul className="list-none" role="list">
@@ -287,9 +268,9 @@ const Feature = () => {
                       </svg>
                       <p className="text-sm text-slate-400 leading-6 ml-2">
                         <strong className="font-semibold text-slate-100">
-                          Code Simplification
+                          Incentives for Farmers
                         </strong>{" "}
-                        — Refactor for readability
+                        — We provide farmers with rewards based on their efforts and accurate crop predictions.
                       </p>
                     </div>
                   </li>
@@ -311,9 +292,9 @@ const Feature = () => {
                       </svg>
                       <p className="text-sm text-slate-400 leading-6 ml-2">
                         <strong className="font-semibold text-slate-100">
-                          Maintainability Boost{" "}
+                          Data-Driven Marketplace
                         </strong>
-                        — Easy code updates
+                        — Big companies leverage our platform to access real-time crop prediction data, enabling informed business decisions.
                       </p>
                     </div>
                   </li>
@@ -335,28 +316,30 @@ const Feature = () => {
                       </svg>
                       <p className="text-sm text-slate-400 leading-6 ml-2">
                         <strong className="font-semibold text-slate-100">
-                          Best Practices
+                          Mutually Beneficial Ecosystem
                         </strong>{" "}
-                        — Adherence to coding standards
+                        — This unique system connects farmers and companies, fostering collaboration and shared success in the agricultural sector
                       </p>
                     </div>
                   </li>
                 </ul>
               </div>
-              <Link
+
+              {/* <Link
                 href="/refactor"
                 className="items-center relative text-sm bg-gradient-to-br dark:focus:ring-lime-800 dark:hover:text-gray-900 dark:text-white focus:outline-none focus:ring-4 focus:ring-lime-200 font-medium from-[#6112b5] group group-hover:from-[#6112b5] group-hover:to-[#6112b5] inline-flex justify-center overflow-hidden p-0.5 rounded-lg text-gray-900 to-[#6112b5] mb-2 mr-2 w-fit mt-6"
               >
                 <span className="flex items-center text-white hover:bg-purple-700 duration-75 ease-in relative rounded-md transition-all py-2.5 px-8">
                   Get started ✨
                 </span>
-              </Link>
+              </Link> */}
+
             </div>
             <div className="h-full lg:mt-0 lg:order-none mt-12 order-1">
               <div
                 className="w-full border-white/10 lg:border lg:p-10 lg:rounded-3xl"
               >
-                
+                <img src="/3.jpg" alt="" />
               </div>
             </div>
           </div>
