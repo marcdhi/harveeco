@@ -26,6 +26,8 @@ async def services():
 @router.post("/crop_predictions")
 async def ml(data: LightHouseData):
 
+    print(data)
+
     service_dict = {}
 
     for i in data.model_dump():

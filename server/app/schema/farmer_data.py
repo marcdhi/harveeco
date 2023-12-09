@@ -19,4 +19,5 @@ class LightHouseData(BaseModel):
     state: str
     aadhar: str
     crop_price: float
+    month: str
     
