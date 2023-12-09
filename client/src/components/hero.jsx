@@ -21,6 +21,8 @@ export default function Hero() {
                             <div class="md:text-center text-left">
                                 <div class="max-w-4xl gap-6 lg:gap-12 lg:items-end mx-auto">
                                     <div>
+                                        <img className="" src="/logo_crop.png" height="150" width="150">
+                                        </img>
 
                                         <h1 class="font-medium mt-8 text-[65px] leading-[74px] tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-200 via-slate-300 to-slate-600">Harveeco is a way to put farmers incharge of their data</h1>
 

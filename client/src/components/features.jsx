@@ -51,14 +51,13 @@ const Feature = () => {
           <div className="list-none gap-4 grid grid-cols-1 lg:gap-24 lg:grid-cols-2 mt-6">
             <div>
               <span className="text-xs bg-clip-text bg-gradient-to-r font-medium from-[#b278ef] text-transparent to-green-500 tracking-widest uppercase via-esmerald-600">
-                We feel the farmers
+                We prioritize farmers
               </span>
               <h2 className="font-normal text-white mt-8 text-3xl">
-                Automated Code Documentation Generation
+                Predict crop yield using Machine Learning
               </h2>
               <p className="max-w-2xl mt-4 text-slate-400 text-lg">
-                reDocs.ai uses AI technology to generate accurate
-                documentation for your code.
+                Harveeco uses Machine Learning to predict crop yield and help farmers make better decisions.
               </p>
               <div className="mt-12 gap-3">
                 <ul className="list-none" role="list">
@@ -80,9 +79,9 @@ const Feature = () => {
                       </svg>
                       <p className="text-sm text-slate-400 leading-6 ml-2">
                         <strong className="font-semibold text-slate-100">
-                          Entire Codebase
+                          Exhaustive Data Analysis
                         </strong>{" "}
-                        — reDocs.ai helps in documenting the entire codebase
+                        — Harveeco uses historical data to predict crop yield
                       </p>
                     </div>
                   </li>
@@ -104,9 +103,9 @@ const Feature = () => {
                       </svg>
                       <p className="text-sm text-slate-400 leading-6 ml-2">
                         <strong className="font-semibold text-slate-100">
-                          Best practices{" "}
+                          Verifiability with zkML{" "}
                         </strong>
-                        — Documentations are generated as per the best
+                        — Harveeco makes sure that the predictions are not manipulated by any third party.
                       </p>
                     </div>
                   </li>
@@ -151,7 +150,7 @@ const Feature = () => {
                 x-data=""
                 x-tabs=""
               >
-                <img src="/redocs.png" />
+                <img src="/1.jpg" />
               </div>
             </div>
           </div>
