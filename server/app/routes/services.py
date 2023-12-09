@@ -54,11 +54,12 @@ async def ml(data: FarmerGeoData):
 
     crop = ml_dict['farmer_data']["crop"]
 
+    month = ml_dict['farmer_data']["month"]
+
     humidity = (moisture * 0.02) / 100
 
     df = pd.read_csv("data/rainfall.csv")
 
-    rainfall_array = forecasted_rainfall(df, 365*6)
 
     month_vs_index = {
         'Jan': 0,
@@ -75,6 +76,8 @@ async def ml(data: FarmerGeoData):
         'Dec': 11
     }
 
+    rainfall_array = forecasted_rainfall(location, month)
+
     rainfall = rainfall_array[month_vs_index[ml_dict['farmer_data']["month"]]]
 
     N = value_n(location)
@@ -89,7 +92,7 @@ async def ml(data: FarmerGeoData):
 
     print(list)
 
-    allocate_optimal_land()
+    # allocate_optimal_land()
 
     
 

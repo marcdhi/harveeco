@@ -20,13 +20,15 @@ router = APIRouter()
 
 from dotenv import load_dotenv
 
+import datetime
+
 load_dotenv()
 
 iot_dict = {}
 
 @router.get("/iot")
 async def iot():
-    return iot_dict
+    return "Hello from the iot route!"
 
 
 @router.post("/crop_iot")
@@ -44,6 +46,9 @@ async def iot(data: CropData):
 
     json_to_file(json_data, "data/crop_data.json")
 
+    initialize_lighthouse("data/crop_data.json", "upload")
+
+    return "Lesss gooo"
 
     # list, x = infer()
 
