@@ -51,10 +51,10 @@ const Feature = () => {
           <div className="list-none gap-4 grid grid-cols-1 lg:gap-24 lg:grid-cols-2 mt-6">
             <div>
               <span className="text-xs bg-clip-text bg-gradient-to-r font-medium from-[#b278ef] text-transparent to-green-500 tracking-widest uppercase via-esmerald-600">
-                Code Documentation
+                We feel the farmers
               </span>
               <h2 className="font-normal text-white mt-8 text-3xl">
-                📚 Automated Code Documentation Generation
+                Automated Code Documentation Generation
               </h2>
               <p className="max-w-2xl mt-4 text-slate-400 text-lg">
                 reDocs.ai uses AI technology to generate accurate
