@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, Depends, status
-
-from schema.iot_data import CropData
+import requests
+from schema.farmer_data import FarmerGeoData
 
 router = APIRouter()
 
@@ -10,8 +10,26 @@ async def services():
 
 
 @router.post("/crop_predictions")
-async def ml():
-    pass
+async def ml(data: FarmerGeoData):
+    service_dict = {}
+
+    with open("data/crop_data.json", "r") as f:
+        iot_dict = f.read()
+
+    for i in data.model_dump():
+        service_dict[i] = data.model_dump()[i]
+
+    ml_dict = {
+        "farmer_data": service_dict,
+        "iot_data": iot_dict
+    }
+
+    print(ml_dict)
+
+
+
+    
+
 
     
 

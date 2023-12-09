@@ -51,15 +51,16 @@ def allocate_optimal_land(current_money = 100,buying_price1 = buying_price_list,
 
     top_crops, probs = infer()
     maps = get_mapping()
-    # output_per_area = [crop_to_area_dict[crop] for crop in top_crops]
-    # print(output_per_area)
-    # time_to_grow = [crop_to_time_dict[crop] for crop in top_crops]
+    output_per_area = [crop_to_area_dict[crop] for crop in top_crops]
+    print(output_per_area)
+    time_to_grow = [crop_to_time_dict[crop] for crop in top_crops]
+    print(time_to_grow)
 
     #current_money = 70
     buying_price = [4,6,7]
-    price_per_kg = [10, 80, 12]
-    output_per_area = [0.5, 4, 2]
-    time_to_grow = [10, 4, 2]
+    price_per_kg = [5, 80, 90]
+    # output_per_area = [0.5, 4, 2]
+    # time_to_grow = [10, 4, 2]
 
     max_time_to_grow = max(time_to_grow) 
 

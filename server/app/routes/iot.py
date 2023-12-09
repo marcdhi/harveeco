@@ -22,9 +22,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+iot_dict = {}
+
 @router.get("/iot")
 async def iot():
-    return {"message": "IoT Sensors work!"}
+    return iot_dict
 
 
 @router.post("/crop_iot")
@@ -36,35 +38,20 @@ async def iot(data: CropData):
 
     create_folder_if_not_exists(crop_data_folder)
 
-    # lighthouse = initialize_lighthouse()
-
     print(data)
 
-    json_data = {
-        "temperature": data.temperature,
-        "pressure": data.pressure,
-        "moisture": data.moisture
-    }
+    json_data = data.model_dump()
 
     json_to_file(json_data, "data/crop_data.json")
 
-    # file_path = os.path.join(os.getcwd(), crop_data_folder, "crop_data.json")
 
-    # upload = lighthouse.upload(source=file_path)
+    # list, x = infer()
 
-    # response = lighthouse.uploadText()
+    # allocate_optimal_land()
 
-    list, x = infer()
-
-    allocate_optimal_land()
-
-    print(list)
+    # print(list)
 
 
 
-    print("Uploaded!")
-
-
-    return "Success!"
 
     

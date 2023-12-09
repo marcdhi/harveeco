@@ -22,7 +22,7 @@ app.add_middleware(
 
 # Include your API routers here
 app.include_router(iot.router, prefix="", tags=["iot"])
-# app.include_router(services.router, prefix="", tags=["services"])
+app.include_router(services.router, prefix="", tags=["services"])
 
 @app.get("/")
 async def main():
