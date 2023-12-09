@@ -24,13 +24,20 @@ float beatsPerMinute;
 int beatAvg;
 
 long globalLastUpdate = millis();
-int updateInterval = 6000;  //5 mins
+int updateInterval = 10000;  //10 secs
 
 float moisture = 250;
 
 float temperature;
 float pressure;
 float altitude;
+
+// MetaData
+const String name = "Ayush";
+const float area = 1000;
+const String aadhar = "1324567890121314";
+const String state = "Gujarat";
+const float crop_price = 400;
 
 // Initialising the LCD object
 const int rs = D7, en = D6, d4 = D5, d5 = D4, d6 = D3, d7 = D0;
@@ -42,7 +49,6 @@ const char* password = "";
 
 // Endpoints
 const char* serverName = "http://192.168.158.28:8000/crop_iot";
-
 void setup() {
   // Initialize Serial Communication
   Serial.begin(9600);
@@ -173,14 +179,14 @@ void loop() {
     // initiate http instance
     http.begin(client, serverName);
     http.addHeader("Content-Type", "application/json");
-    String json_data = String("{\"temperature\":\"") + temperature + String("\",\"pressure\":\"") + pressure + String("\",\"moisture\":\"") + moisture + String("\",\"altitude\":\"") + altitude + String("\"}");
+    String json_data = String("{\"temperature\":\"") + temperature + String("\",\"pressure\":\"") + pressure + String("\",\"moisture\":\"") + moisture + String("\",\"altitude\":\"") + altitude + String("\",\"name\":\"") + name + String("\",\"area\":\"") + area + String("\",\"aadhar\":\"") + aadhar + String("\",\"state\":\"") + state + String("\",\"crop_price\":\"") + crop_price + String("\"}");
     int httpCode = http.POST(json_data);
     // int httpCode = http.GET();
     Serial.print("HTTP Response code: ");
     Serial.println(httpCode);
     
     // display the updates on the LCD
-    displayUpdates();
+    // displayUpdates();
 
     // Terminate http instance
     http.end();
@@ -188,6 +194,7 @@ void loop() {
   else {
     Serial.println("WiFi Disconnected");
   }
-  globalLastUpdate = millis();
+    globalLastUpdate = millis();
+    updateInterval = 100000000;  //10 secs
   }
 }
