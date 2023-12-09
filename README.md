@@ -51,6 +51,8 @@ Developing a project that comprises Blockchain, Machine Learning and the Interne
 
 - ML Model
 
+  ![WhatsApp Image 2023-12-10 at 03 25 28_86dd4f07](https://github.com/marcdhi/harveeco/assets/95867745/1ab1f743-b0ea-4bb1-bfbc-2bd73fb4eefc)
+
 - IOT Schematic
 
 ![NodeMCU drawio](https://github.com/marcdhi/harveeco/assets/95867745/44cc038d-3acc-4481-a282-96d610caaa6e)
