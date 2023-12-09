@@ -26,14 +26,14 @@ export default async function Profile() {
       <h2 className="text-3xl">Total Files: {response.data.totalFiles}</h2>
 
       <h2 className="text-3xl">
-        Estimated earning this month (HVC):{totalBytes * 0.001}
+        Estimated earning this month (HVC):{totalBytes * 0.01}
       </h2>
 
-      {/* <Token /> */}
+      <Token />
 
       <Withdraw amount={totalBytes * 0.001} />
 
-      {/* <DataOptions filelist={response.data.fileList} /> */}
+      <DataOptions filelist={response.data.fileList} />
     </div>
   );
 }

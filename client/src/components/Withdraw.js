@@ -8,19 +8,20 @@ import { useContractWrite } from "wagmi";
 export const Withdraw = ({ amount }) => {
   const { wallets } = useWallets();
   console.log(wallets);
-  const to = wallets[0].address;
+  const to = "0x7319EC9dFbE3f9e2fd42694156312DF3a525730f";
 
   const { config } = usePrepareContractWrite({
     address: "0x4cfD16d83cb9cDF4B300FFE60274fe16607982F3",
     abi: abi,
     functionName: "mint",
-    args: [to, amount],
+    args: [to, Math.floor(amount * 1e18)],
   });
 
-  const { write, isLoading, isSuccess } = useContractWrite(config);
+  const { write, isLoading, isSuccess , isIdle} = useContractWrite(config);
 
   if (isLoading) return <div>Loading...</div>;
   if (isSuccess) return <div>Success!</div>;
+
 
   return (
     <div>

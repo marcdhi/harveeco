@@ -1,11 +1,15 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import CreateProposal from "@/components/CreateProposal";
 
 export default function Dashboard() {
   return (
     <div>
       <h1>Dashboard</h1>
+
+      <CreateProposal />
+
       <h2>Proposals</h2>
 
     </div>
