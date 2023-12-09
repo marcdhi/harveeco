@@ -68,7 +68,6 @@ export default function Analysis(props) {
     { id: "UT", state: "Uttarakhand", value: 0 },
     { id: "UP", state: "Uttar Pradesh", value: 0 },
     { id: "WB", state: "West Bengal", value: 0 },
-    { id: "WB", state: "West Bengal", value: 0 },
     { id: "AN", state: "Andaman and Nicobar Islands", value: 0 },
     { id: "CH", state: "Chandigarh", value: 0 },
     { id: "DN", state: "Dadra and Nagar Haveli", value: 0 },
@@ -106,7 +105,7 @@ export default function Analysis(props) {
   return (
     <>
       <ComposableMap
-        className="bg-white"
+        className="bg-black"
         // data-tip=""
         projectionConfig={PROJECTION_CONFIG}
         projection="geoMercator"
