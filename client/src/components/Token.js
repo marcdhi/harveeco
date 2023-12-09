@@ -9,7 +9,7 @@ export default function Token() {
 
   const res = useBalance({
     address: "0x7319EC9dFbE3f9e2fd42694156312DF3a525730f",
-    token: "0x6cD23FB64f122705AbeE7305Eef346Bb10175491",
+    token: "0x4cfD16d83cb9cDF4B300FFE60274fe16607982F3",
   });
 
   if (res.isLoading) return <div>Loading...</div>;
@@ -35,16 +35,6 @@ export default function Token() {
             }{" "}
             {res.data.symbol}
           </div>
-
-          <Button className="m-2">
-            <a
-              href="https://app.uniswap.org/#/swap?inputCurrency=MATIC&outputCurrency=0x6cD23FB64f122705AbeE7305Eef346Bb10175491"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get Tokens
-            </a>
-          </Button>
         </CardContent>
       </Card>
     </div>

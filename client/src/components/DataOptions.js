@@ -24,9 +24,9 @@ import Link from "next/link";
 
 export function DataOptions({ filelist }) {
   return (
-    <div className="flex space-y-4">
+    <div className="flex flex-col space-y-4">
       {filelist.map((file, index) => (
-        <div key={index} className="bg-gray-100 p-2 rounded-md ">
+        <div key={index} className=" flex p-2 justify-between nbg-green-200 w-screen rounded-md ">
           <h3 className="break-words">
             <Link href={`ipfs://${file.cid}`}>{file.fileName}</Link>
           </h3>

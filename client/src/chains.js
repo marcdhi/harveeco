@@ -7,6 +7,7 @@ import { alchemyProvider } from "wagmi/providers/alchemy";
 // All of the chains configured below are supported by Tableland
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
+    chain.filecoinCalibration,
     chain.mainnet,
     chain.goerli,
     chain.polygon,
@@ -16,7 +17,6 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
     chain.sepolia,
     chain.polygonMumbai,
     chain.optimismGoerli,
-    chain.filecoinCalibration,
     chain.hardhat,
   ],
   [
@@ -26,9 +26,9 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: "Tableland Starter",
+  appName: "TESTING Starter",
   chains,
-  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID ?? "", // Set up a WalletConnect account: https://walletconnect.com/
+  projectId: "da766262c93ccbbdef65e546c2a6027f" ?? "", // Set up a WalletConnect account: https://walletconnect.com/
 });
 
 export const config = createConfig({
