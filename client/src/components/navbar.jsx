@@ -68,6 +68,7 @@ export default function Navbar() {
                     <nav class="items-center flex-col flex-grow hidden md:flex md:flex-row md:justify-center md:pb-0" >
                         <Link href="/" class="text-sm text-white font-normal hover:text-white/50 lg:px-6 md:px-3 px-2 py-2">Home</Link>
                         <Link href="/#features" class="text-sm text-white font-normal hover:text-white/50 lg:px-6 md:px-3 px-2 py-2">Features</Link>
+                        <Link href="/chatPush" class="text-sm text-white font-normal hover:text-white/50 lg:px-6 md:px-3 px-2 py-2">Discussion</Link>
                         <span className="flex items-center md:px-4 transition hover:text-primary">
                             {ready
                                 ? (authenticated
