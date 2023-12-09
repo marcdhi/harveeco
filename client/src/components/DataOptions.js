@@ -28,7 +28,7 @@ export function DataOptions({ filelist }) {
       {filelist.map((file, index) => (
         <div key={index} className="bg-gray-100 p-2 rounded-md ">
           <h3 className="break-words">
-            <Link href={`/file/${file.cid}`}>{file.fileName}</Link>
+            <Link href={`ipfs://${file.cid}`}>{file.fileName}</Link>
           </h3>
           <p>{file.txHash}</p>
           <p>{file.fileSizeInBytes}</p>
