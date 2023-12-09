@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LogInWithAnonAadhaar, useAnonAadhaar } from "anon-aadhaar-react";
 
 export default function Hero() {
     return (
@@ -25,9 +26,12 @@ export default function Hero() {
                                 </div>
                                 <div class="flex flex-col justify-center gap-3 lg:items-center lg:justify-center mt-12 sm:flex-row">
                                     <Link href="#features" class="items-center relative text-sm bg-gradient-to-br focus:ring-[#5b3c7d] hover:text-gray-900 dark:text-white focus:outline-none focus:ring-4 font-medium from-[#6112b5] group group-hover:from-[#5b3c7d] group-hover:to-[#5b3c7d] inline-flex justify-center overflow-hidden p-0.5 rounded-lg text-gray-900 to-[#6112b5] focus:shadow-lg mb-2 mr-2 w-fit" id="hero-landing-cta-button">
-                                        <span class="flex items-center text-white duration-150 ease-in  relative rounded-md transition-all py-2.5 px-5 hover:bg-purple-700">Checkout features 🚀 
+                                        <span class="flex items-center text-white duration-150 ease-in  relative rounded-md transition-all py-2.5 px-5 hover:bg-purple-700">Checkout features 🚀
                                         </span>
                                     </Link>
+                                    <div className="flex w-full place-content-center">
+                                        <LogInWithAnonAadhaar />
+                                    </div>
                                 </div>
                             </div>
                         </div>
