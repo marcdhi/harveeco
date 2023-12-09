@@ -19,7 +19,7 @@ export default function Hero() {
                             <div class="md:text-center text-left">
                                 <div class="max-w-2xl gap-6 lg:gap-12 lg:items-end mx-auto">
                                     <div>
-                                        <span class="text-lg bg-clip-text bg-gradient-to-r font-medium from-purple-400 text-transparent to-green-500 tracking-widest uppercase via-emerald-600">reDocs.ai</span>
+                                        <span class="text-lg bg-clip-text bg-gradient-to-r font-medium from-purple-400 text-transparent to-green-500 tracking-widest uppercase via-emerald-600">Harveeco</span>
                                         <h1 class="font-normal mt-8 text-3xl bg-clip-text text-transparent bg-gradient-to-r from-slate-50 to-gray-200">AI-powered tools to <strong>generate Code &amp; API documentation, Tests, and Code Refactors</strong> from your source code files</h1>
                                     </div>
                                 </div>

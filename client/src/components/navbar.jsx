@@ -6,6 +6,7 @@ import {
     HoverCardContent,
     HoverCardTrigger,
 } from "@/components/ui/hover-card"
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
 
@@ -13,6 +14,7 @@ export default function Navbar() {
     const { wallets } = useWallets();
     const [signer, setSigner] = useState(null);
     const [loggingOut, setLoggingOut] = useState(false);
+    const router = useRouter()
 
     console.log(ready, authenticated, wallets)
 
@@ -65,37 +67,41 @@ export default function Navbar() {
                             <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round inline-flex" class="inline-flex" stroke-width="2"></path><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round inline-flex" class="hidden" stroke-width="2"></path></svg>
                         </button>
                     </div>
-                    <nav class="items-center flex-col flex-grow hidden md:flex md:flex-row md:justify-center md:pb-0" >
+                    <nav class="items-center w-full flex-col relative flex-grow hidden md:flex md:flex-row md:justify-center md:pb-0" >
                         <Link href="/" class="text-sm text-white font-normal hover:text-white/50 lg:px-6 md:px-3 px-2 py-2">Home</Link>
                         <Link href="/#features" class="text-sm text-white font-normal hover:text-white/50 lg:px-6 md:px-3 px-2 py-2">Features</Link>
-                        <Link href="/chatPush" class="text-sm text-white font-normal hover:text-white/50 lg:px-6 md:px-3 px-2 py-2">Discussion</Link>
-                        <span className="flex items-center md:px-4 transition hover:text-primary">
-                            {ready
-                                ? (authenticated
-                                    ? <button className=" bg-[#604085] text-white p-2 px-3 rounded-xl font-semibold" onClick={() => handleLogout()}>{loggingOut ? "logging out..." : "Logout Privy"}</button>
-                                    : <button className=" bg-[#604085] text-white p-2 px-3 rounded-xl font-semibold" onClick={login}>Login Privy</button>
-                                )
-                                : <button className=" bg-[#624a7d] text-white p-2 px-3 rounded-xl font-semibold" onClick={login} disabled>Login Privy</button>
-                            }
-                        </span>
-                        <div className="mt-12 lg:mt-0 flex gap-4">
-                            {ready && wallets.length > 0
-                                ? <HoverCard>
-                                    <HoverCardTrigger asChild>
-                                        <img
-                                            alt="user"
-                                            src={`https://api.dicebear.com/7.x/identicon/svg?seed=${wallets[0].address}`}
-                                            className=" w-10 h-10 rounded-full"
-                                        />
-                                    </HoverCardTrigger>
-                                    <HoverCardContent className="z-20">
-                                        <button onClick={() => router.push("/profile/annotator")} className="hover:bg-slate-200 p-2 rounded-lg">
-                                            Profile
-                                        </button>
-                                    </HoverCardContent>
-                                </HoverCard>
-                                : <></>
-                            }
+                        <Link href="/pushChat" class="text-sm text-white font-normal hover:text-white/50 lg:px-6 md:px-3 px-2 py-2">Discussion</Link>
+                        <Link href="/redeem" class="text-sm text-white font-normal hover:text-white/50 lg:px-6 md:px-3 px-2 py-2">Redeem</Link>
+                        <Link href="/buyData" class="text-sm text-white font-normal hover:text-white/50 lg:px-6 md:px-3 px-2 py-2">Analytical</Link>
+                        <div className="absolute right-0 flex gap-5">
+                            <span className="flex items-center md:px-4 transition hover:text-primary">
+                                {ready
+                                    ? (authenticated
+                                        ? <button className=" bg-[#604085] text-white p-2 px-3 rounded-xl font-semibold" onClick={() => handleLogout()}>{loggingOut ? "logging out..." : "Logout Privy"}</button>
+                                        : <button className=" bg-[#604085] text-white p-2 px-3 rounded-xl font-semibold" onClick={login}>Login Privy</button>
+                                    )
+                                    : <button className=" bg-[#624a7d] text-white p-2 px-3 rounded-xl font-semibold" onClick={login} disabled>Login Privy</button>
+                                }
+                            </span>
+                            <div className="mt-12 lg:mt-0 flex gap-4">
+                                {ready && wallets.length > 0
+                                    ? <HoverCard>
+                                        <HoverCardTrigger asChild>
+                                            <img
+                                                alt="user"
+                                                src={`https://api.dicebear.com/7.x/identicon/svg?seed=${wallets[0].address}`}
+                                                className=" w-10 h-10 rounded-full"
+                                            />
+                                        </HoverCardTrigger>
+                                        <HoverCardContent className="z-20">
+                                            <button onClick={() => router.push("/profile")} className="hover:bg-slate-200 p-2 rounded-lg">
+                                                Profile
+                                            </button>
+                                        </HoverCardContent>
+                                    </HoverCard>
+                                    : <></>
+                                }
+                            </div>
                         </div>
                     </nav >
                 </div>
