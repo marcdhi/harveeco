@@ -1,7 +1,8 @@
 from pydantic import BaseModel
 
 class FarmerGeoData(BaseModel):
-    location: str
     rainfall: float
     crop_price: float
+    crop: str
     state: str
+    month: str

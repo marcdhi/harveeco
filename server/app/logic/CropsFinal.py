@@ -91,9 +91,9 @@ maps = get_mapping()
 
 # loaded_model=pickle.load(open('./logic/ml_models/crop_model_final.sav','rb'))
 
-input_data=(49,4.234107,4.406719,34.315615,2.731860,7.263119,81.787105,350.0)
+# input_data=(49,4.234107,4.406719,34.315615,2.731860,7.263119,81.787105,350.0)
 
-def infer(input_data = input_data, model = model):
+def infer(input_data, model = model):
     input_array=np.asarray(input_data)
     data_reshape=input_array.reshape(1,-1)
     prediction=model.predict_proba(data_reshape)
