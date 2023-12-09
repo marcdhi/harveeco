@@ -1,38 +1,29 @@
-"use client";
 import { DataOptions } from "@/components/DataOptions";
-import { DialogDemo } from "@/components/Dialog";
-import { TableDemo } from "@/components/Proposals";
-import Inputs from "@/components/Propose";
-import Token from "@/components/VotingPower";
+import { downloadFile } from "@/utils/downloader";
+// // import { DialogDemo } from "@/components/Dialog";
+// import { TableDemo } from "@/components/Proposals";
+// import { Button } from "@/components/ui/button";
+import lighthouse from "@lighthouse-web3/sdk";
 
-import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
+export default async function Profile() {
+  const response = await lighthouse.getUploads(
+    "2a1b6927.d5bbb91c306340aa934793ed01f54fac"
+  );
 
-export default function Profile() {
-  const [proposals, setProposals] = useState([]);
+  console.log(response);
 
-  useEffect(() => {
-    async function getProposals() {
-      const res = await fetch("http://localhost:3000/api/proposals");
-      const data = await res.json();
-      setProposals(data.proposals);
-      console.log(data);
-    }
-    getProposals();
-  }, []);
+  downloadFile(
+    "QmT1MRTH2XmjHDQHLyPp6UZ9pYDTPpiPGr789CGxf6RXmE",
+    "temp.json"
+  )
 
   return (
     <div>
       <h1>Profile</h1>
-
-      {/* <Token /> */}
-
-      <DialogDemo />
-
-      <h2>Proposals</h2>
-
-      <TableDemo />
-
+      <h2 className="text-3xl">
+        Total Files: {response.data.totalFiles}
+      </h2>
+      <DataOptions filelist={response.data.fileList}/>
     </div>
   );
 }

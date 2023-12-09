@@ -9,22 +9,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const proposal = {
-  title: "Proposal 1",
-  description: "This is a proposal",
-  cid: "QmbJERs...",
-  proposalId: 1,
-  status: "Pending",
-  votes: 0,
-};
 
-const proposals = [];
-
-for (let i = 0; i < 10; i++) {
-  proposals.push(proposal);
-}
-
-export function TableDemo() {
+export function TableDemo({proposals}) {
   return (
     <Table>
       <TableCaption>A list of your recent proposals.</TableCaption>
