@@ -24,7 +24,7 @@ float beatsPerMinute;
 int beatAvg;
 
 long globalLastUpdate = millis();
-int updateInterval = 10000;  //10 secs
+int updateInterval = 10000;  //15 mins
 
 float moisture = 250;
 
@@ -91,40 +91,56 @@ void setup() {
   delay(5000);
   lcd.clear();
   lcd.setCursor(0, 0);
+  globalLastUpdate = millis();
 }
 
 void displayUpdates(){
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("Temp: ");
-  lcd.print(temperature);
-  lcd.setCursor(0,1);
-  lcd.print("P: ");
-  lcd.print(pressure);
-  delay(2000);
-  lcd.clear();
-  lcd.setCursor(0,0);
-  lcd.print("P: ");
-  lcd.print(pressure);
-  lcd.setCursor(0,1);
-  lcd.print("Moisture: ");
-  lcd.print(moisture);
-  delay(2000);
-  lcd.clear();
-  lcd.setCursor(0,0);
-  lcd.print("Moisture: ");
-  lcd.print(moisture);
-  lcd.setCursor(0,1);
-  lcd.print("Alt: ");
-  lcd.print(altitude);
-  delay(2000);
-  lcd.setCursor(0,0);
+  while((millis()-globalLastUpdate) < updateInterval){
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Temp: ");
+    lcd.print(temperature);
+    lcd.setCursor(0,1);
+    lcd.print("P: ");
+    lcd.print(pressure);
+    delay(2000);
+    
+    lcd.clear();
+    lcd.setCursor(0,0);
+    lcd.print("P: ");
+    lcd.print(pressure);
+    lcd.setCursor(0,1);
+    lcd.print("Moisture: ");
+    lcd.print(moisture);
+    delay(2000);
+
+    lcd.clear();
+    lcd.setCursor(0,0);
+    lcd.print("Moisture: ");
+    lcd.print(moisture);
+    lcd.setCursor(0,1);
+    lcd.print("Alt: ");
+    lcd.print(altitude);
+    delay(2000);
+
+    lcd.clear();
+    lcd.setCursor(0,0);
+    lcd.print("Alt: ");
+    lcd.print(altitude);
+    lcd.setCursor(0,1);
+    lcd.print("Avg BPM: ");
+    lcd.print(beatAvg);
+    delay(2000);
+
+    lcd.setCursor(0,0);
+    lcd.clear();
+  }
 }
 
 void loop() {
   // Get Readings from Moisture Sensor 
   int raw_moisture = analogRead(A0);
-  moisture = map(raw_moisture,600,1024,0,255);
+  moisture = map(raw_moisture,350,1024,0,255);
   if (moisture <= 0) moisture = 255;
   moisture = 255-moisture;
   // Get readings from BMP280
@@ -153,13 +169,14 @@ void loop() {
     }
   }
   if((millis()-globalLastUpdate) >= updateInterval){
+    updateInterval = 900000;
     Serial.print(temperature);
     Serial.print("\t");
     Serial.print(pressure);
     Serial.print("\t");
-    Serial.print(altitude);
-    Serial.print("\t");
     Serial.print(moisture);
+    Serial.print("\t");
+    Serial.print(altitude);
     Serial.print("\t");
     Serial.print("BPM=");
     Serial.print(beatsPerMinute);
@@ -181,12 +198,11 @@ void loop() {
     http.addHeader("Content-Type", "application/json");
     String json_data = String("{\"temperature\":\"") + temperature + String("\",\"pressure\":\"") + pressure + String("\",\"moisture\":\"") + moisture + String("\",\"altitude\":\"") + altitude + String("\",\"name\":\"") + name + String("\",\"area\":\"") + area + String("\",\"aadhar\":\"") + aadhar + String("\",\"state\":\"") + state + String("\",\"crop_price\":\"") + crop_price + String("\"}");
     int httpCode = http.POST(json_data);
-    // int httpCode = http.GET();
     Serial.print("HTTP Response code: ");
     Serial.println(httpCode);
     
     // display the updates on the LCD
-    // displayUpdates();
+    displayUpdates();
 
     // Terminate http instance
     http.end();
@@ -195,6 +211,5 @@ void loop() {
     Serial.println("WiFi Disconnected");
   }
     globalLastUpdate = millis();
-    updateInterval = 100000000;  //10 secs
   }
 }
