@@ -3,6 +3,10 @@
 #include "MAX30105.h"
 #include "heartRate.h"
 
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+
 MAX30105 oxySensor;
 Adafruit_BMP280 bmp;
 
@@ -20,9 +24,21 @@ int beatAvg;
 long globalLastUpdate = millis();
 int updateInterval = 5000;
 
+int moisture = 250;
+
+// Wifi Creds
+const char* ssid = "OnePlus Nord CE 3 Lite 5G";
+const char* password = "";
+
+// Endpoints
+const char* serverName = "http://192.168.158.28:8000/crop_iot";
+
 void setup() {
   // Initialize Serial Communication
   Serial.begin(9600);
+
+  // Moisture Sensor
+  pinMode(A0,INPUT);
 
   // Initialize BMP280
   bmp.begin(BMP280_ADDRESS_ALT, BMP280_CHIPID);
@@ -38,9 +54,24 @@ void setup() {
   oxySensor.setup();
   oxySensor.setPulseAmplitudeRed(0x0A);
   oxySensor.setPulseAmplitudeGreen(0); 
+
+  // Initialize Wifi Connection
+  WiFi.begin(ssid, password);
+  Serial.println("Connecting");
+  while(WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.print("Connected to WiFi network with IP Address: ");
+  Serial.println(WiFi.localIP()); 
 }
 
 void loop() {
+  // Get Readings from Moisture Sensor 
+  int raw_moisture = analogRead(A0);
+  moisture = map(raw_moisture,10,700,0,255);
+  if (moisture <= 0) moisture = 255;
 
   // Get readings from BMP280
   float temperature = bmp.readTemperature();
@@ -74,6 +105,8 @@ void loop() {
     Serial.print("\t");
     Serial.print(altitude);
     Serial.print("\t");
+    Serial.print(moisture);
+    Serial.print("\t");
     Serial.print("BPM=");
     Serial.print(beatsPerMinute);
     Serial.print("\t");
@@ -85,15 +118,25 @@ void loop() {
       Serial.print(" No finger?");
     Serial.println();
     
-    String temperatureStr = String(temperature);
-    String pressureStr = String(pressure);
-    String altitudeStr = String(altitude);
-    String data = temperatureStr + "/" + pressureStr + "/" + altitudeStr;
-    const char* dataBuffer = data.c_str();
-    Wire.beginTransmission(SlaveNode);
-    Wire.write((const uint8_t*)dataBuffer, strlen(dataBuffer));
-    Wire.endTransmission();
- 
-    globalLastUpdate = millis();
+    //Check WiFi connection status
+  if(WiFi.status()== WL_CONNECTED){
+    WiFiClient client;
+    HTTPClient http;
+    // initiate http instance
+    http.begin(client, serverName);
+    http.addHeader("Content-Type", "application/json");
+    String json_data = String("{\"temperature\":\"") + temperature + String("\",\"pressure\":\"") + pressure + String("\",\"moisture\":\"") + moisture + String("\",\"altitude\":\"") + altitude + String("\"}");
+    int httpCode = http.POST(json_data);
+    // int httpCode = http.GET();
+    Serial.print("HTTP Response code: ");
+    Serial.println(httpCode);
+    
+    // Terminate http instance
+    http.end();
+  }
+  else {
+    Serial.println("WiFi Disconnected");
+  }
+  globalLastUpdate = millis();
   }
 }
