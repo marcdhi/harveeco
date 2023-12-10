@@ -53,7 +53,8 @@ Developing a project that comprises Blockchain, Machine Learning and the Interne
 ## Network Diagram And Schematics
 - Network Diagram
 
-  ![blockchain drawio (1)](https://github.com/marcdhi/harveeco/assets/95867745/eead17ad-9495-43de-8b89-7c87ae419de6)
+ ![blockchain drawio (1) (1)](https://github.com/marcdhi/harveeco/assets/95867745/c8e4cbcb-93a2-4850-8d1a-4f474539f670)
+
 
 - ML Model
 
