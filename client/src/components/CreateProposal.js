@@ -32,7 +32,7 @@ export default function CreateProposal() {
   };
 
   return (
-    <div className="flex flex-col w-1/2">
+    <div className="flex flex-col w-1/2 ml-5">
       <h1 className="text-3xl font-bold">Create Proposal</h1>
       <form  className="flex flex-col">
         <label className="flex flex-col">

@@ -30,12 +30,17 @@ export default function Dashboard() {
 
   return (
     <div className="flex flex-col w-screen">
-      <h1>Dashboard</h1>
-     {data}
+      <h1 className=" text-4xl text-center font-semibold my-5">Dashboard</h1>
+      {data}
 
-      <CreateProposal />
+      <div className="flex gap-20">
+        <CreateProposal />
+        <div> 
+          
+        </div>
+      </div>
 
-      <h2>Proposals</h2>
+      <h2 className=" text-4xl text-center font-semibold my-5">Proposals</h2>
 
       {proposals.map((proposal) => (
         <div
