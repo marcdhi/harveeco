@@ -1,6 +1,6 @@
 <div align="center">
   
-![harveeco_logo](https://github.com/marcdhi/harveeco/assets/97223188/88409ed5-9289-4912-8550-89b5e9900902)
+<img src="./harveeco_logo.png" alt="harveeco" border="1" width="100"/>
 
   <p align="center">
     Empowering farmers with comprehensive solutions
