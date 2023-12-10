@@ -1,4 +1,3 @@
-
 import { DataOptions } from "@/components/DataOptions";
 import { Button } from "@/components/ui/button";
 import { downloadFile } from "@/utils/downloader";
@@ -21,17 +20,28 @@ export default async function Profile() {
   });
 
   return (
-    <div>
-      <h1>Profile</h1>
+    <div className="flex flex-col items-center justify-center">
+      {/* <h1>Profile</h1>
       <h2 className="text-3xl">Total Files: {response.data.totalFiles}</h2>
 
       <h2 className="text-3xl">
         Estimated earning this month (HVC):{totalBytes * 0.01}
+      </h2> */}
+
+      <h1 className="">Profile</h1>
+
+      <h2 className="">Total Files: {response.data.totalFiles}</h2>
+
+      <h2 className="">
+        Estimated earning this month (HVC):
+        <b className="font-bold">{totalBytes * 0.001}</b>
       </h2>
 
-      <Token />
+      <div className="flex flex-row justify-between w-1/2">
+        <Token />
 
-      <Withdraw amount={totalBytes * 0.001} />
+        <Withdraw amount={totalBytes * 0.001} />
+      </div>
 
       <DataOptions filelist={response.data.fileList} />
     </div>

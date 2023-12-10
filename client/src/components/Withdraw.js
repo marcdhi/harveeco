@@ -1,12 +1,14 @@
 "use client";
 import { usePrepareContractWrite } from "wagmi";
 import { useWallets } from "@privy-io/react-auth";
-import abi from "../contractABIs/harveecoDao.json";
+import abi from "../contractABIs/harveecoToken.json";
 import { Button } from "./ui/button";
 import { useContractWrite } from "wagmi";
 
 export const Withdraw = ({ amount }) => {
-  const { wallets } = useWallets();
+  const { wallets } = useWallets({
+    chainId: 314159,
+  });
   console.log(wallets);
   const to = "0x7319EC9dFbE3f9e2fd42694156312DF3a525730f";
 
@@ -15,6 +17,7 @@ export const Withdraw = ({ amount }) => {
     abi: abi,
     functionName: "mint",
     args: [to, Math.floor(amount * 1e18)],
+    chainId: 314159,
   });
 
   const { write, isLoading, isSuccess , isIdle} = useContractWrite(config);

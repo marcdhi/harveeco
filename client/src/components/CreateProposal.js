@@ -32,7 +32,7 @@ export default function CreateProposal() {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-1/2">
       <h1 className="text-3xl font-bold">Create Proposal</h1>
       <form  className="flex flex-col">
         <label className="flex flex-col">
@@ -41,7 +41,7 @@ export default function CreateProposal() {
             className="border-2 border-gray-500"
             type="text"
             value={proposalName}
-            onMouseUp={(e) => setProposalName(e.target.value)}
+            onChange={(e) => setProposalName(e.target.value)}
           />
         </label>
         <label className="flex flex-col">
