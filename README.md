@@ -63,9 +63,7 @@ IoT:
 
 - Sensor Calibration: Accurately calibrating the sensors to obtain reliable and consistent data was critical for generating accurate predictions. This involved careful selection of sensor hardware, calibration procedures, and error correction techniques.
 
-- Wireless Communication: Establishing stable and reliable wireless communication between sensors and the central server was crucial for real-time data transmission. We explored various communication protocols like LoRaWAN and NB-IoT to ensure data delivery with minimal latency and packet loss.
-
-- Security: Protecting the network and data from potential cyberattacks was paramount. We implemented robust security measures like firewalls, encryption, and access control mechanisms to safeguard the system.
+- Wireless Communication: Establishing stable and reliable wireless communication between the ESP8266 and the central server was crucial for real-time data transmission. 
 
 ## Additional Challenges:
 
