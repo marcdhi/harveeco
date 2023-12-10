@@ -1,6 +1,11 @@
-# Harveeco
+<div align="center">
+  
+![harveeco_logo](https://github.com/marcdhi/harveeco/assets/97223188/88409ed5-9289-4912-8550-89b5e9900902)
 
-Dead simple! A DAO for farmers.
+  <p align="center">
+    Empowering farmers with comprehensive solutions
+  </p>
+</div>
 
 ## Table of Contents
 
@@ -14,11 +19,17 @@ Dead simple! A DAO for farmers.
 
 ## Project Idea
 
-To improve the lives of Indian farmers by leveraging `Blockchain Technology`, `Machine Learning` and `Internet of Things`.
+Harveeco aims to improve the lives of Indian farmers by leveraging the transformative power of blockchain technology, machine learning, and the Internet of Things (IoT). By integrating these technologies, we can create a more transparent, efficient, and profitable agricultural ecosystem for Indian farmers.
 
-Indian farmers face numerous challenges, including:
-* Unpredictable crop yields: Farmers often lack access to accurate information about weather, market conditions, and optimal crops for their land. 
-* Exploitative market practices: Middlemen and intermediaries often take a large share of farmers' profits, leaving them with insufficient income.
+Indian farmers face numerous challenges that significantly impact their livelihood and well-being. These include:
+
+* Unpredictable crop yields: Due to limited access to accurate information about weather patterns, soil conditions, and optimal crop selection, farmers often experience unpredictable and inconsistent yields. This leads to financial instability and vulnerabilities.
+  
+* Exploitative market practices: Middlemen and intermediaries often exploit the lack of market access and information asymmetry, leading to unfair pricing and a significant share of farmers' profits being siphoned off. This results in low income and hinders economic development in rural communities.
+
+* Inefficient resource utilization: Traditional practices often lead to over-utilization of resources like water and fertilizers, contributing to environmental degradation and unsustainable agricultural practices.
+
+* Limited access to finance and resources: Many farmers struggle to access financial resources and essential inputs like quality seeds, fertilizers, and technology, further hindering their productivity and profitability.
   
 ## Our Approach
 * **Gathering Data using NodeMCU:** With the present sensors the Temperature, Pressure, Altitude, and Moisture Data is gathered live. The data is processed to give produce calibrated readings.
