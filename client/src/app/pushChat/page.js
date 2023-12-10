@@ -7,6 +7,27 @@ import { ethers } from "ethers";
 import { usePrivy, useWallets } from "@privy-io/react-auth";
 import { FaUserGroup } from "react-icons/fa6";
 
+export const CreateGroup = async (name,description) => {
+
+    console.log("creating...")
+    const Pkey = `0x${process.env.NEXT_PUBLIC_PUSH_PRIVATE_KEY}`;
+    const _signer = new ethers.Wallet(Pkey);
+
+    const userAlice = await PushAPI.initialize(_signer, { env: 'staging' })
+
+    const createdGroup = await userAlice.chat.group.create(
+        name,
+        {
+            description: description,
+            image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FImage&psig=AOvVaw16PEctH_L9HtCiWSSHn4qE&ust=1702201061445000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNjataCHgoMDFQAAAAAdAAAAABAD"
+        }
+
+    );
+    // setGroupCreated(true);
+    console.log(createdGroup)
+    return createdGroup;
+}
+
 export default function PushChat() {
 
     const [signerInfo, setSignerInfo] = useState()
@@ -14,26 +35,6 @@ export default function PushChat() {
     const [chats, setChats] = useState({})
     const { wallets } = useWallets();
     const [activeChat, setActiveChat] = useState("")
-
-    const CreateGroup = async (name,description) => {
-
-        console.log("creating...")
-        const Pkey = `0x${process.env.NEXT_PUBLIC_PUSH_PRIVATE_KEY}`;
-        const _signer = new ethers.Wallet(Pkey);
-
-        const userAlice = await PushAPI.initialize(_signer, { env: 'staging' })
-
-        const createdGroup = await userAlice.chat.group.create(
-            name,
-            {
-                description: description,
-                image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FImage&psig=AOvVaw16PEctH_L9HtCiWSSHn4qE&ust=1702201061445000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNjataCHgoMDFQAAAAAdAAAAABAD"
-            }
-
-        );
-        setGroupCreated(true);
-        console.log(createdGroup)
-    }
 
     const Pkey = `0x${process.env.NEXT_PUBLIC_PUSH_PRIVATE_KEY}`;
     const _signer = new ethers.Wallet(Pkey);
@@ -59,7 +60,7 @@ export default function PushChat() {
     return (
         <div className="flex gap-5 bg-black min-h-[calc(100vh-72px)]">
             <aside className="flex flex-col gap-4 px-3 static top-0">
-                <button className="bg-[#624a7d] text-white py-4 px-3 rounded-xl font-semibold w-full" onClick={() => CreateGroup}>make group</button>
+                {/* <button className="bg-[#624a7d] text-white py-4 px-3 rounded-xl font-semibold w-full" onClick={() => CreateGroup}>make group</button> */}
                 <div>
                     {chats.length > 0
                         ? (chats.map((data, index) => {
