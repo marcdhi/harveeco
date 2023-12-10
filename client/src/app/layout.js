@@ -1,13 +1,23 @@
-"use client"
-
-import { Inter } from 'next/font/google'
-import './globals.css'
-import { PrivyProvider } from '@privy-io/react-auth';
-import { base, baseGoerli, scrollSepolia, scrollTestnet, mainnet, goerli, polygon, polygonMumbai, filecoinCalibration } from '@wagmi/core/chains'
-import Navbar from '../components/navbar';
+"use client";
+import { config } from "@/chains";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { PrivyProvider } from "@privy-io/react-auth";
+import {
+  base,
+  baseGoerli,
+  scrollSepolia,
+  scrollTestnet,
+  mainnet,
+  goerli,
+  polygon,
+  polygonMumbai,
+  filecoinCalibration,
+} from "@wagmi/core/chains";
+import Navbar from "../components/navbar";
+import { WagmiConfig } from "wagmi";
 
 const inter = Inter({ subsets: ["latin"] });
-
 
 // export const metadata = {
 //   title: 'Harveeco',
@@ -18,20 +28,32 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <PrivyProvider
-          appId={process.env.NEXT_PUBLIC_PRIVY_ID}
-          onSuccess={(user) => console.log(`User ${user} logged in!`)}
-          config={{
-            defaultChain: filecoinCalibration,
-            supportedChains: [base, baseGoerli, scrollSepolia, scrollTestnet, mainnet, goerli, polygon, polygonMumbai, filecoinCalibration],
-            embeddedWallets: {
-              createOnLogin: 'users-without-wallets'
-            }
-          }}
-        >
-          <Navbar />
-          {children}
-        </PrivyProvider>
+        <WagmiConfig config={config}>
+          <PrivyProvider
+            appId={"clpxid1p500ijjp0fzu3fy5z0"}
+            onSuccess={(user) => console.log(`User ${user} logged in!`)}
+            config={{
+              defaultChain: filecoinCalibration,
+              supportedChains: [
+                base,
+                baseGoerli,
+                scrollSepolia,
+                scrollTestnet,
+                mainnet,
+                goerli,
+                polygon,
+                polygonMumbai,
+                filecoinCalibration,
+              ],
+              embeddedWallets: {
+                createOnLogin: "users-without-wallets",
+              },
+            }}
+          >
+            <Navbar />
+            {children}
+          </PrivyProvider>
+        </WagmiConfig>
       </body>
     </html>
   );

@@ -5,8 +5,8 @@ export const downloadFile = async (cid, path) => {
   const data = await response.json();
 
   console.log(data);
-  const test = JSON.parse(data);
-  console.log(test);
+//   const test = JSON.parse(data);
+//   console.log(test);
 
 //   const predictions = await fetch(
 //     "https://c3a2-14-195-9-98.ngrok-free.app/crop_predictions",
