@@ -1,5 +1,4 @@
 import { DataOptions } from "@/components/DataOptions";
-import { Button } from "@/components/ui/button";
 import { downloadFile } from "@/utils/downloader";
 import lighthouse from "@lighthouse-web3/sdk";
 import Token from "@/components/Token";

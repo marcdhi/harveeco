@@ -7,12 +7,10 @@ import { PrivyProvider } from "@privy-io/react-auth";
 export function Providers({ children }) {
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => setMounted(true), []);
-
+ 
   return (
     <PrivyProvider
-    //   appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID}
-      appId={"clpxid1p500ijjp0fzu3fy5z0"}
-    
+      appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID}
       onSuccess={(user) => console.log(`User ${user.id} logged in!`)}
       config={{
         supportedChains: chains,
