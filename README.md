@@ -104,10 +104,9 @@ IoT:
 ![NodeMCU drawio](https://github.com/marcdhi/harveeco/assets/95867745/44cc038d-3acc-4481-a282-96d610caaa6e)
 
 ## Installation and Setup Guide
-- Server
+- For Server Setup refer to [Server Guide](./server/README.md)
 - Client
-- IOT
-    - For IOT Firmware Setup and Installation refer to [IOT Guide](https://github.com/marcdhi/harveeco/tree/main/Firmware#nodemcu---esp8266-firmware)
+- For IOT Firmware Setup and Installation refer to [IOT Guide](https://github.com/marcdhi/harveeco/tree/main/Firmware#nodemcu---esp8266-firmware)
 
 
 ## Team Members
