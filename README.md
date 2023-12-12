@@ -19,7 +19,7 @@
 
 ## Project Idea
 
-Harveeco aims to improve the lives of Indian farmers by leveraging the transformative power of blockchain technology, machine learning, and the Internet of Things (IoT). By integrating these technologies, we can create a more transparent, efficient, and profitable agricultural ecosystem for Indian farmers.
+Harveeco aims to improve the lives of Indian farmers by leveraging the transformative power of Blockchain Technologies, Machine Learning, and the Internet of Things (IoT). By integrating these technologies, we can create a more transparent, efficient, and profitable agricultural ecosystem for Indian farmers.
 
 Indian farmers face numerous challenges that significantly impact their livelihood and well-being. These include:
 
