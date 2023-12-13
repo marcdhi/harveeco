@@ -122,6 +122,6 @@ IoT:
 
 ## Scroll Contract Deployment
 
-- Verifier Contract: [0x5FbDB2315678afecb367f032d93F642f64180aa3](https://rinkeby.etherscan.io/address/0x5FbDB2315678afecb367f032d93F642f64180aa3)
-- AnnonAadhar Contract: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512](https://rinkeby.etherscan.io/address/0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512)
-- Governor Contract: [0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2](https://rinkeby.etherscan.io/address/0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2)
+- Verifier Contract: [0x0d409415F08153E4207eC6437572d24565e204bD](https://sepolia.scrollscan.dev/address/0x0d409415f08153e4207ec6437572d24565e204bd)
+- AnnonAadhar Contract: [0xDfbe179aC0946e9FFf5C384e568918C1982Aab38](https://sepolia.scrollscan.dev/address/0xDfbe179aC0946e9FFf5C384e568918C1982Aab38)
+- Governor Harveeco DAO Contract: [0xEfF7B44035F4c0E38f5fec374C4d2C8db030adA1](https://sepolia.scrollscan.dev/address/0xeff7b44035f4c0e38f5fec374c4d2c8db030ada1)
