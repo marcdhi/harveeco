@@ -9,15 +9,17 @@
 
 ## Table of Contents
 
-1. [Project Idea](#project-idea)
-2. [Our Approach](#our-approach)
-3. [Challenges We Faced](#challenges-we-faced)
-4. [Technologies We Used](#technologies-we-used)
-5. [Network Diagram](#network-diagram-and-schematics)
-6. [Installation and Setup Guide](#installation-and-setup-guide)
-7. [Team Members](#team-members)
 
-## Project Idea
+
+- [Table of Contents](#table-of-contents)
+- [Our Approach](#our-approach)
+- [Challenges We Faced](#challenges-we-faced)
+- [Additional Challenges:](#additional-challenges)
+- [Technologies We Used](#technologies-we-used)
+- [Network Diagram And Schematics](#network-diagram-and-schematics)
+- [Installation and Setup Guide](#installation-and-setup-guide)
+- [Team Members](#team-members)
+- [Scroll Contract Deployment](#scroll-contract-deployment)
 
 Harveeco aims to improve the lives of Indian farmers by leveraging the transformative power of Blockchain Technologies, Machine Learning, and the Internet of Things (IoT). By integrating these technologies, we can create a more transparent, efficient, and profitable agricultural ecosystem for Indian farmers.
 
@@ -116,3 +118,10 @@ IoT:
 - [Vedant Tarale](https://devfolio.co/@vedant_tarale)
 - [Ayush Kumar Singh](https://devfolio.co/@Ayush4345)
 - [Mardav Gandhi](https://devfolio.co/@marcdhi)
+
+
+## Scroll Contract Deployment
+
+- Verifier Contract: [0x0d409415F08153E4207eC6437572d24565e204bD](https://sepolia.scrollscan.dev/address/0x0d409415f08153e4207ec6437572d24565e204bd)
+- AnnonAadhar Contract: [0xDfbe179aC0946e9FFf5C384e568918C1982Aab38](https://sepolia.scrollscan.dev/address/0xDfbe179aC0946e9FFf5C384e568918C1982Aab38)
+- Governor Harveeco DAO Contract: [0xEfF7B44035F4c0E38f5fec374C4d2C8db030adA1](https://sepolia.scrollscan.dev/address/0xeff7b44035f4c0e38f5fec374c4d2c8db030ada1)
