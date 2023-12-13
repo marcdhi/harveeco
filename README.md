@@ -9,15 +9,17 @@
 
 ## Table of Contents
 
-1. [Project Idea](#project-idea)
-2. [Our Approach](#our-approach)
-3. [Challenges We Faced](#challenges-we-faced)
-4. [Technologies We Used](#technologies-we-used)
-5. [Network Diagram](#network-diagram-and-schematics)
-6. [Installation and Setup Guide](#installation-and-setup-guide)
-7. [Team Members](#team-members)
 
-## Project Idea
+
+- [Table of Contents](#table-of-contents)
+- [Our Approach](#our-approach)
+- [Challenges We Faced](#challenges-we-faced)
+- [Additional Challenges:](#additional-challenges)
+- [Technologies We Used](#technologies-we-used)
+- [Network Diagram And Schematics](#network-diagram-and-schematics)
+- [Installation and Setup Guide](#installation-and-setup-guide)
+- [Team Members](#team-members)
+- [Scroll Contract Deployment](#scroll-contract-deployment)
 
 Harveeco aims to improve the lives of Indian farmers by leveraging the transformative power of Blockchain Technologies, Machine Learning, and the Internet of Things (IoT). By integrating these technologies, we can create a more transparent, efficient, and profitable agricultural ecosystem for Indian farmers.
 
@@ -116,3 +118,10 @@ IoT:
 - [Vedant Tarale](https://devfolio.co/@vedant_tarale)
 - [Ayush Kumar Singh](https://devfolio.co/@Ayush4345)
 - [Mardav Gandhi](https://devfolio.co/@marcdhi)
+
+
+## Scroll Contract Deployment
+
+- Verifier Contract: [0x5FbDB2315678afecb367f032d93F642f64180aa3](https://rinkeby.etherscan.io/address/0x5FbDB2315678afecb367f032d93F642f64180aa3)
+- AnnonAadhar Contract: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512](https://rinkeby.etherscan.io/address/0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512)
+- Governor Contract: [0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2](https://rinkeby.etherscan.io/address/0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2)
